@@ -17,11 +17,12 @@ const Movie = (props) => {
     const movies = [];
     const movie = props.movies.find(movie=>movie.id===Number(id));
 
-    const deleteHandler = () => {
-        console.log(id);
+    const deleteHandler = (e) => {
+        e.preventDefault();
+        // console.log(id);
         props.deleteMovie(id);
         push('/movies');
-        console.log(props.movies)
+        // console.log(props.movies)
     }
 
     return(<div className="modal-page col">
