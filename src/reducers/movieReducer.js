@@ -3,7 +3,7 @@ import movies from './../data.js';
 
 const initialState = {
     movies: movies,
-    appTitle: "IMDB Movie Database"
+    appTitle: "IMDB Movie Database",
 }
 
 const reducer = (state = initialState, action) => {
@@ -19,6 +19,12 @@ const reducer = (state = initialState, action) => {
                 movies: state.movies.filter(function(item) {
                     return item.id != action.payload
                 })
+            }
+        case ADD_MOVIE:
+            // console.log('reducer')
+            return{
+                ...state,
+                movie: state.movies.push(action.payload)
             }
         default:
             return state;
