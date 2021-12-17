@@ -7,7 +7,13 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        
+        case TOGGLE_FAVORITES:
+            console.log('reducer')
+            return {
+                ...state,
+                displayFavorites: !state.displayFavorites
+            }
+
         default:
             return state;
     }
