@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state)=> {
     return({
-      appTitle: state.appTitle
+      appTitle: state.movieReducer.appTitle
     })
   }
 
